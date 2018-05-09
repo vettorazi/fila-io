@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>  </title>
+  </head>
+  <body>
+      <h1>TA NA FILA!</h1>
+      <a href="/login">login</a>
+      <script src="/socket.io/socket.io.js" charset="utf-8"></script>
+
+      <script type="text/javascript">
+       var socket = io();
+       socket.on('posfila',function(data) {
+       console.log(data.posfila)
+       // if(data.posfila==0){
+       //   window.location.replace(data.link);
+       // }
+  });
+      </script>
+  </body>
+</html>

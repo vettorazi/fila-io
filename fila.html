@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>  </title>
+  </head>
+  <body>
+      <h1>TA NA FILA. esperando a sua vez</h1>
+
+      <script src="/socket.io/socket.io.js" charset="utf-8"></script>
+
+      <script type="text/javascript">
+       var socket = io('/filaespera');
+       socket.emit('boas vindas');
+       socket.on('fila',function(data) {
+       console.log(data.posfila);
+       console.log(data.link);
+        if(data.posfila==0 && !data.jogador){
+          window.location.replace(data.link);
+        }
+  });
+      </script>
+  </body>
+</html>

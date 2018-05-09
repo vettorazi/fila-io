@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>parabens! vc esperou sua vez e vai jogar</h1>
+    <form action="/tchau">
+    <button type="submit" name="button">parar de jogar</button>
+    </form>
+    <script src="/socket.io/socket.io.js" charset="utf-8"></script>
+    <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
+
+    <script type="text/javascript">
+      var socket = io('/jogo');
+    //    $('form').submit(function(){
+    //   window.location.replace('/tchau.html');
+    // });
+    socket.on('expulsa', function(data){
+      window.location.replace(data.link);
+    });
+    </script>
+  </body>
+</html>
